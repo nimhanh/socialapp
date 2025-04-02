@@ -4,7 +4,6 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -49,7 +48,7 @@ const TweetCard = () => {
           onClick={() => navigate(`/profile/6`)}
           className="cursor-pointer"
           alt="username"
-          src="./home/user.png"
+          src="http://localhost:3000/home/user.png"
         />
 
         <div className="w-full">
@@ -70,13 +69,13 @@ const TweetCard = () => {
 
           <p className="mt-2">This is a sample tweet content.</p>
           <img
-            className="w-[28rem] border border-gray-400 p-5 rounded-md"
-            src="./home/lion.png"
-            alt="Tweet Image"
+            className="w-full max-w-[28rem] border border-gray-400 p-5 rounded-md"
+            src="http://localhost:3000/home/lion.png"
+            alt="Lion"
           />
           
           {/* Icons Section */}
-          <div className="flex items-center justify-between mt-3 text-gray-600">
+          <div className="flex items-center space-x-8 mt-3 text-gray-600">
             <div className="flex items-center space-x-3">
               <ChatBubbleOutlineIcon className="cursor-pointer" onClick={handleOpenReplyModel} />
               <p>43</p>

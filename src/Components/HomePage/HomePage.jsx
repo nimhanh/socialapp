@@ -39,6 +39,10 @@ const HomePage = () => {
         <div className="absolute right-0 top-0 h-full w-px bg-gray-200 transform translate-x-2"></div>
       </Grid>
 
+    
+    
+    
+    
       {/* Right Part */}
       <Grid 
         item 
