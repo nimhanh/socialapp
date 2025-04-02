@@ -48,7 +48,7 @@ const TweetCard = () => {
           onClick={() => navigate(`/profile/6`)}
           className="cursor-pointer"
           alt="username"
-          src="./home/user.png"
+          src="http://localhost:3000/home/user.png"
         />
 
         <div className="w-full">
@@ -70,7 +70,7 @@ const TweetCard = () => {
           <p className="mt-2">This is a sample tweet content.</p>
           <img
             className="w-full max-w-[28rem] border border-gray-400 p-5 rounded-md"
-            src="./home/lion.png"
+            src="http://localhost:3000/home/lion.png"
             alt="Lion"
           />
           

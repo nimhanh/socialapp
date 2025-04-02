@@ -19,8 +19,8 @@ const Profile = () => {
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
 
-    if (newValue === "4") console.log("like tweet");
-    else if (newValue === "1") console.log("users tweet");
+    if (newValue === 4) console.log("like tweet");
+    else if (newValue === 1) console.log("users tweet");
   };
 
   return (
@@ -139,6 +139,7 @@ const Profile = () => {
 
               
             </TabPanel>
+            <TabPanel value="1">Users tweets</TabPanel>
             <TabPanel value="2">Users replies</TabPanel>
             <TabPanel value="3">Media</TabPanel>
             <TabPanel value="4">Likes</TabPanel>
