@@ -24,7 +24,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="relative w-full">
       {/* Header Section */}
       <section className={'z-50 flex items-center sticky top-0 bg-opacity-95 bg-white p-2 shadow-md'}>
         <KeyboardBackspaceIcon className="cursor-pointer" onClick={handleBack} />
@@ -32,16 +32,16 @@ const Profile = () => {
       </section>
 
       {/* Cover Image */}
-      <section>
+      <section className="w-[600px]">
         <img className="w-full h-[15rem] object-cover" src="https://cdn.pixabay.com/photo/2023/07/25/19/47/milky-way-8149815_640.jpg" alt="Cover" />
       </section>
 
       {/* Profile Section */}
-      <section className='p-6 relative'>
+      <section className='p-3 relative w-[600px]'>
         <div className='flex justify-between items-start mt-5 h-[5rem] relative'>
           {/* Avatar */}
           <Avatar
-            className='absolute -top-16 left-4 transform -translate-y-1/2 border-4 border-white shadow-lg'
+            className='absolute -top-16 transform -translate-y-1/2 border-4 border-white shadow-lg'
             alt='code with zosh' 
             src='http://localhost:3000/home/user.png' 
             sx={{ width: "10rem", height: "10rem" }}
@@ -85,7 +85,7 @@ const Profile = () => {
         </div>
 
         {/* Bio and Info */}
-        <div className="mt-2 space-y-3">
+        <div className="mt-2 space-y-2 pl-1">
           <p>Hello, I'm Code with Zosh</p>
           <div className='py-1 flex space-x-5'>
 
@@ -120,7 +120,7 @@ const Profile = () => {
       </section>
 
       {/* Tabs Section */}
-      <section className="py-5">
+      <section className="py-5 w-[600px]">
         <Box sx={{ width: "100%", typography: "body1" }}>
           <TabContext value={tabValue}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>

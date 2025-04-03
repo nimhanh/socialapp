@@ -28,21 +28,17 @@ const HomePage = () => {
         item 
         xs={12} 
         lg={6} 
-        className="flex justify-center relative px-12" // Added px-4 for padding
+        className="flex justify-center relative" // Removed px-12
       >
         <Routes>
           <Route path="/" element={<HomeSection />}></Route>
           <Route path="/home" element={<HomeSection />}></Route>
-          <Route path="/profile/:id" element={<Profile />}></Route>
+          <Route path="/profile/:id" element={<div className="flex justify-end"><Profile /></div>}></Route>
           <Route path="/twit/:id" element={<TwitDetails />}></Route>
         </Routes>
         <div className="absolute right-0 top-0 h-full w-px bg-gray-200 transform translate-x-2"></div>
       </Grid>
 
-    
-    
-    
-    
       {/* Right Part */}
       <Grid 
         item 
