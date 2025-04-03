@@ -7,13 +7,18 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import TweetCard from '../HomeSection/TweetCard';  // Updated import path
+import ProfileModel from './ProfileModel';
 
 const Profile = () => {
   const [tabValue, setTabValue] = useState("1");
   const navigate = useNavigate();
+  const [openProfileModel,setOpenProfileModel]=useState(false);
+  const handleOpenProfileModel= () => setOpenProfileModel(true);
+  const handleClose = () => setOpenProfileModel(false);
+
 
   const handleBack = () => navigate(-1);
-  const handleOpenProfileModel = () => console.log("open profile model");
+  
   const handleFollowUser = () => console.log("follow user");
 
   const handleTabChange = (event, newValue) => {
@@ -145,6 +150,9 @@ const Profile = () => {
             <TabPanel value="4">Likes</TabPanel>
           </TabContext>
         </Box>
+      </section>
+      <section>
+        <ProfileModel handleClose={handleClose} open={openProfileModel}/>
       </section>
     </div>
   );
