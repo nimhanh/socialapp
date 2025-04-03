@@ -9,6 +9,7 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { FavoriteOutlined } from "@mui/icons-material";
 
+
 const TweetCard = () => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -42,7 +43,7 @@ const TweetCard = () => {
   };
 
   return (
-    <div className="p-4 border-b border-gray-200">
+    <React.Fragment>
       <div className="flex space-x-4">
         <Avatar
           onClick={() => navigate(`/profile/6`)}
@@ -106,7 +107,10 @@ const TweetCard = () => {
           </div>
         </div>
       </div>
-    </div>
+      <section>
+        
+      </section>
+    </React.Fragment>
   );
 };
 
