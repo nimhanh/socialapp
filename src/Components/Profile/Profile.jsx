@@ -13,7 +13,7 @@ const Profile = () => {
   const [tabValue, setTabValue] = useState("1");
   const navigate = useNavigate();
   const [openProfileModel,setOpenProfileModel]=useState(false);
-  const handleOpenProfileModel= () => setOpenProfileModel(true);
+  const handleOpenProfileModel =() => setOpenProfileModel(true);
   const handleClose = () => setOpenProfileModel(false);
 
 

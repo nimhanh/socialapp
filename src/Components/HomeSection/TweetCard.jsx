@@ -3,17 +3,22 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import VerifiedIcon from "@mui/icons-material/Verified";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { FavoriteOutlined } from "@mui/icons-material";
-
+import ReplyModal from "./ReplyModal";
 
 const TweetCard = () => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
+  const [openReplyModel, setOpenReplyModel] = useState(false);
   const open = Boolean(anchorEl);
+
+  const handleOpenReplyModel = () => setOpenReplyModel(true);
+  const handleCloseReplyModal = () => setOpenReplyModel(false);
 
   // Handle Menu Open
   const handleClick = (event) => {
@@ -29,17 +34,21 @@ const TweetCard = () => {
     console.log("Delete tweet");
     handleClose();
   };
-
-  const handleOpenReplyModel = () => {
-    console.log("open model");
-  };
   
   const handleCreateRetweet = () => {
     console.log("handle create retweet");
   };
   
-  const handleLikeRetweet = () => {
+  const handleLikeTweet = () => {
     console.log("handle Like tweet");
+  };
+
+  const handleViewStats = () => {
+    console.log("View tweet statistics");
+  };
+
+  const handleShareTweet = () => {
+    console.log("Share tweet");
   };
 
   return (
@@ -56,7 +65,9 @@ const TweetCard = () => {
           <div className="flex justify-between items-center">
             <div className="flex cursor-pointer items-center space-x-2">
               <span className="font-semibold">Gangul Ranaweera</span>
-              <span className="text-gray-600">@gangulr · 2m</span>
+              <span className="text-gray-600">@gangulr</span>
+              <span className="text-gray-500">· 2m</span>
+              <VerifiedIcon className="text-blue-500" fontSize="small" />
             </div>
             <Button onClick={handleClick}>
               <MoreHorizIcon />
@@ -78,38 +89,58 @@ const TweetCard = () => {
           {/* Icons Section */}
           <div className="flex items-center space-x-8 mt-3 text-gray-600">
             <div className="flex items-center space-x-3">
-              <ChatBubbleOutlineIcon className="cursor-pointer" onClick={handleOpenReplyModel} />
+              <ChatBubbleOutlineIcon 
+                className="cursor-pointer" 
+                onClick={handleOpenReplyModel} 
+              />
               <p>43</p>
             </div>
 
             <div className="flex items-center space-x-3">
-              <RepeatIcon onClick={handleCreateRetweet} className="cursor-pointer" />
+              <RepeatIcon 
+                onClick={handleCreateRetweet} 
+                className="cursor-pointer" 
+              />
               <p>54</p>
             </div>
 
             <div className="flex items-center space-x-3 text-pink-600">
               {true ? (
-                <FavoriteIcon onClick={handleLikeRetweet} className="cursor-pointer" />
+                <FavoriteIcon 
+                  onClick={handleLikeTweet} 
+                  className="cursor-pointer" 
+                />
               ) : (
-                <FavoriteOutlined onClick={handleLikeRetweet} className="cursor-pointer" />
+                <FavoriteOutlined 
+                  onClick={handleLikeTweet} 
+                  className="cursor-pointer" 
+                />
               )}
               <p>54</p>
             </div>
 
             <div className="flex items-center space-x-3">
-              <BarChartIcon className="cursor-pointer" onClick={handleOpenReplyModel} />
+              <BarChartIcon 
+                className="cursor-pointer" 
+                onClick={handleViewStats} 
+              />
               <p>430</p>
             </div>
 
             <div className="flex items-center space-x-3">
-              <FileUploadIcon className="cursor-pointer" onClick={handleOpenReplyModel} />
+              <FileUploadIcon 
+                className="cursor-pointer" 
+                onClick={handleShareTweet} 
+              />
             </div>
           </div>
         </div>
       </div>
-      <section>
-        
-      </section>
+      
+      <ReplyModal 
+        open={openReplyModel} 
+        handleClose={handleCloseReplyModal}
+      />
     </React.Fragment>
   );
 };

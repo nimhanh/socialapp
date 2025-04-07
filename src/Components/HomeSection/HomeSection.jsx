@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Avatar, Button } from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -12,6 +12,9 @@ const validationSchema = Yup.object().shape({
 });
 
 const HomeSection = () => {
+    const [uploadingImage, setUploadingImage] = useState(false);
+    const [selectedImage, setSelectedImage] = useState("");
+
     const handleSubmit = (values) => {
         console.log("values", values);
     };
@@ -26,8 +29,11 @@ const HomeSection = () => {
     });
 
     const handleSelectImage = (event) => {
+        setUploadingImage(true);
         const imgUrl = event.target.files[0];
         formik.setFieldValue("image", imgUrl);
+        setSelectedImage(imgUrl);
+        setUploadingImage(false);
     };
 
     return (

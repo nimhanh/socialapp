@@ -3,10 +3,14 @@ import SearchIcon from '@mui/icons-material/Search';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import { Button } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import SubscriptionModal from '../SubscriptionModal/SubscriptionModal';
 
 const RightPart = () => {
+    const [openSubscriptionModel, setOpenSubscriptionModel] = React.useState(false);
+    const handleOpenSubscriptionModel = () => setOpenSubscriptionModel(true);
+    const handleCloseSubscriptionModel = () => setOpenSubscriptionModel(false);
     const handleChangeTheme = () => {
-        console.log("handle change theme");
+    console.log("handle change theme");
     };
 
     return (
@@ -31,7 +35,10 @@ const RightPart = () => {
             <section className="my-5">
                 <h1 className="text-xl font-bold">Get verified</h1>
                 <h1 className="font-bold my-2">Subscribe to unlock new features</h1>
-                <Button variant="contained" sx={{ padding: "19px", px: "29px", borderRadius: "25px" }}>
+                <Button variant="contained" 
+                sx={{ padding: "19px", px: "29px", borderRadius: "25px" }}
+                onClick={handleOpenSubscriptionModel}
+                >
                     Get Verified 
                 </Button>
             </section>
@@ -60,6 +67,14 @@ const RightPart = () => {
                     </div>
                 ))}
             </section>
+
+            <section>
+
+                <SubscriptionModal open={openSubscriptionModel} handleClose={handleCloseSubscriptionModel}/>
+
+            </section>
+
+
         </div>
     );
 };
